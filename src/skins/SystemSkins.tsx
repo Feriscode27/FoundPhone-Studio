@@ -103,7 +103,7 @@ export function PhoneSkin(p: Props) {
               <button
                 className={`call-row ${meta(i, "status") === "未接" ? "missed" : ""}`}
                 key={i.id}
-                onClick={() => p.onItem(i)}
+                onClick={() => (i.kind === "call" ? setCall(i.sender || i.title) : p.onItem(i))}
               >
                 <Phone size={17} />
                 <span>
@@ -128,10 +128,10 @@ export function PhoneSkin(p: Props) {
       />
       {call && (
         <div className="virtual-call">
-          <small>虚拟通话</small>
+          <small>正在与对方进行语音通话</small>
           <Avatar name={call} />
           <h2>{call}</h2>
-          <p>这是作品内的通话模拟</p>
+          <p>作品内模拟通话 · 点击下方按钮结束</p>
           <button aria-label="挂断" onClick={() => setCall("")}>
             <Phone />
           </button>

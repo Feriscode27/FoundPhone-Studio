@@ -4235,3 +4235,22 @@
 .sms-real-composer > button:disabled {
   opacity: .4;
 }
+
+
+/* WeChat simulated call controls for the fan-made phone story */
+.wx-chat-compose { gap: 8px; padding: 8px 10px; }
+.wx-call-menu-anchor { position: relative; flex: 0 0 auto; }
+.wx-call-menu-anchor > button { display: grid; place-items: center; border: 0; background: transparent; color: inherit; padding: 5px; }
+.wx-call-menu { position: absolute; z-index: 30; bottom: 42px; left: 0; display: grid; gap: 4px; min-width: 116px; padding: 7px; border-radius: 12px; background: #fff; box-shadow: 0 4px 22px #0002; }
+.wx-call-menu button { border: 0; background: #f5f5f5; color: #222; border-radius: 8px; padding: 9px 12px; text-align: left; white-space: nowrap; }
+.wx-call-overlay { position: absolute; z-index: 80; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 30px; color: #fff; background: linear-gradient(180deg, #263b52, #111b2a); text-align: center; }
+.wx-call-overlay .skin-avatar { width: 86px; height: 86px; border-radius: 50%; display: grid; place-items: center; background: #8ba2b8; color: #fff; font-size: 38px; }
+.wx-call-overlay h2 { margin: 0; font-size: 27px; }
+.wx-call-overlay p { margin: 0; color: #d6deea; }
+.wx-call-top { position: absolute; top: 18%; color: #d6deea; font-size: 14px; }
+.wx-call-actions { position: absolute; bottom: 12%; display: flex; justify-content: center; gap: 76px; }
+.wx-call-actions button, .wx-call-hangup { display: flex; flex-direction: column; align-items: center; gap: 8px; border: 0; color: #fff; background: transparent; }
+.wx-call-actions svg, .wx-call-hangup svg { width: 56px; height: 56px; padding: 17px; border-radius: 50%; }
+.wx-call-decline svg, .wx-call-hangup svg { background: #e5484d; transform: rotate(135deg); }
+.wx-call-accept svg { background: #20b65a; }
+.wx-call-hangup { position: absolute; bottom: 12%; flex-direction: row; }

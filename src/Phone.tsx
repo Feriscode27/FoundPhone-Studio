@@ -1046,6 +1046,7 @@ function AppContent({
               onBack={onBack}
               thread={thread}
               onThread={setThread}
+              onSend={onSend}
             />
           </Suspense>
         </div>

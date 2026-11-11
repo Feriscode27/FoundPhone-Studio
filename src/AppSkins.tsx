@@ -182,9 +182,16 @@ export function WeChatSkin(p: SkinProps) {
   const posts = p.items.filter(
     (i) => i.folder === "朋友圈" || i.kind === "post",
   );
-  const incomingCall = p.thread === "王橹杰" ? p.items.find(
-    (i) => i.title === p.thread && i.kind === "call",
-  ) : undefined;
+  const incomingCall = p.thread === "王橹杰"
+    ? p.items
+        .filter(
+          (i) =>
+            i.title === p.thread &&
+            i.kind === "call" &&
+            i.meta?.trigger === "wechat-reply",
+        )
+        .at(-1)
+    : undefined;
   // Incoming call items are persisted in the chat timeline. Derive the
   // ringing screen directly from that item so it cannot be missed by an
   // effect when the chat updates on slower mobile browsers.

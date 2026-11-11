@@ -56,6 +56,7 @@ import {
 import { getApp, type AppPlugin } from "./registry";
 import {
   initialRuntime,
+  makeItem,
   safeMedia,
   type Work,
   type Item,
@@ -475,6 +476,48 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  onSend={(thread, text) => {
+                    if (creator || !text.trim()) return;
+                    const current = runtimeRef.current;
+                    const time = current.time || "09:41";
+                    const outgoing = makeItem({
+                      title: thread,
+                      body: text.trim(),
+                      sender: work.phone.owner,
+                      time,
+                      outgoing: true,
+                      read: true,
+                    });
+                    const lower = text.toLowerCase();
+                    const reply = /吃饭|饿|外卖|饭/.test(lower)
+                      ? "好啊，你想吃什么？我看看附近有什么。"
+                      : /球|篮球|训练/.test(lower)
+                        ? "刚结束，等我一下。你怎么突然问这个？"
+                        : /想你|喜欢/.test(lower)
+                          ? "……怎么突然说这个。"
+                          : /在吗|干嘛|忙/.test(lower)
+                            ? "在呢，刚刚没看手机。"
+                            : /奶茶|喝|饮料/.test(lower)
+                              ? "可以，记得帮我少冰。"
+                              : /哈哈|笑/.test(lower)
+                                ? "你笑什么啊ㅋㅋ"
+                                : "嗯嗯，我看到啦。等下跟你说。";
+                    const incoming = makeItem({
+                      title: thread,
+                      body: reply,
+                      sender: thread === "王橹杰" ? "王橹杰" : thread,
+                      time,
+                      outgoing: false,
+                      read: true,
+                    });
+                    update({
+                      ...current,
+                      messages: {
+                        ...current.messages,
+                        [app]: [...(current.messages[app] ?? []), outgoing, incoming],
+                      },
+                    });
+                  }}
                 />
               </AppWindow>
             ) : (
@@ -866,6 +909,7 @@ function AppContent({
   onBack,
   onSettings,
   onUi,
+  onSend,
   work,
 }: {
   app: AppPlugin;
@@ -879,6 +923,7 @@ function AppContent({
   onBack: () => void;
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
+  onSend: (thread: string, text: string) => void;
   work: Work;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
@@ -889,6 +934,7 @@ function AppContent({
   const [unlocks, setUnlocks] = useState<string[]>([]);
   const [pwError, setPwError] = useState("");
   const [likes, setLikes] = useState<string[]>([]);
+  const [draft, setDraft] = useState("");
   const shown = items
     .filter((i) => creator || visible(i, state))
     .filter((i) =>
@@ -1111,9 +1157,27 @@ function AppContent({
               ＋ 添加一条消息
             </button>
           ) : (
-            <div className="chat-compose muted">
-              根据剧情推进，互动回复将在这里出现。
-            </div>
+            <form
+              className="chat-compose"
+              onSubmit={(event) => {
+                event.preventDefault();
+                if (!draft.trim()) return;
+                onSend(thread, draft);
+                setDraft("");
+              }}
+              style={{ display: "flex", gap: 8, alignItems: "center", padding: 10 }}
+            >
+              <input
+                aria-label="输入微信消息"
+                placeholder="发送消息…"
+                value={draft}
+                onChange={(event) => setDraft(event.target.value)}
+                style={{ flex: 1, minWidth: 0, border: "1px solid #ddd", borderRadius: 18, padding: "10px 13px", background: "white", color: "#222" }}
+              />
+              <button type="submit" disabled={!draft.trim()} style={{ border: 0, borderRadius: 16, padding: "9px 15px", background: draft.trim() ? "#07c160" : "#aaa", color: "white" }}>
+                发送
+              </button>
+            </form>
           )}
         </div>
       ) : (

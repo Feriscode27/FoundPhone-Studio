@@ -491,7 +491,7 @@ function PhoneRuntime({
                     const lower = text.toLowerCase();
                     const asksIfAwake = /睡了没|睡了吗|睡着了吗|还没睡/.test(text.trim());
                     const asksForVoice = /听听你的声音|听你的声音|想听你说话/.test(text.trim());
-                    const privateChat = thread === "王橹杰";
+                    const privateChat = app.id === "wechat" && thread === "王橹杰";
                     const reply = privateChat && asksIfAwake
                       ? "还没呢，怎么了？这么晚，你怎么还不睡？"
                       : privateChat && asksForVoice

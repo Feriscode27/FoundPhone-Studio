@@ -4206,3 +4206,32 @@
   margin-top: auto;
   padding-bottom: 22px;
 }
+
+
+.sms-real-composer {
+  gap: 9px;
+}
+.sms-real-composer input {
+  min-width: 0;
+  flex: 1;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d5d5da;
+  border-radius: 18px;
+  background: #fff;
+  color: #222;
+  font: inherit;
+  font-size: 13px;
+}
+.sms-real-composer > button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1684f8;
+  color: #fff;
+}
+.sms-real-composer > button:disabled {
+  opacity: .4;
+}

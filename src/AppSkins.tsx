@@ -1,6 +1,6 @@
 import { NativeComposer } from "./DeviceSystem";
 import { useSkinState } from "./skinState";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronLeft,
   Plus,
@@ -159,7 +159,9 @@ export function WeChatSkin(p: SkinProps) {
     [moments, setMoments] = useState(false),
     [menu, setMenu] = useState(false),
     [searchOpen, setSearchOpen] = useState(false),
-    [utility, setUtility] = useState("");
+    [utility, setUtility] = useState(""),
+    [callMenu, setCallMenu] = useState(false),
+    [callState, setCallState] = useState<"ringing" | "connected" | null>(null);
   const [readThreads, setReadThreads] = useSkinState<string[]>(
     p,
     "readThreads",
@@ -178,6 +180,13 @@ export function WeChatSkin(p: SkinProps) {
   const posts = p.items.filter(
     (i) => i.folder === "朋友圈" || i.kind === "post",
   );
+  const incomingCall = p.thread === "王橹杰" && p.items.find(
+    (i) => i.title === p.thread && i.kind === "call",
+  );
+  useEffect(() => {
+    if (!incomingCall) return;
+    setCallState("ringing");
+  }, [incomingCall?.id]);
   return (
     <div
       className="wechat-ui independent-skin"
@@ -289,15 +298,25 @@ export function WeChatSkin(p: SkinProps) {
             <Compose creator={p.creator} onAdd={p.onAdd} />
           ) : (
             <form
-              className="skin-compose"
+              className="skin-compose wx-chat-compose"
               onSubmit={(event) => {
                 event.preventDefault();
                 if (!draft.trim()) return;
                 p.onSend?.(p.thread, draft.trim());
                 setDraft("");
               }}
-              style={{ gap: 8, padding: "8px 10px" }}
             >
+              <div className="wx-call-menu-anchor">
+                <button type="button" aria-label="更多聊天功能" onClick={() => setCallMenu(!callMenu)}>
+                  <Plus size={22} />
+                </button>
+                {callMenu && (
+                  <div className="wx-call-menu">
+                    <button type="button" onClick={() => { setCallMenu(false); setCallState("connected"); }}>语音通话</button>
+                    <button type="button" onClick={() => { setCallMenu(false); setCallState("connected"); }}>视频通话</button>
+                  </div>
+                )}
+              </div>
               <input
                 aria-label="输入微信消息"
                 placeholder="发送消息…"
@@ -330,6 +349,22 @@ export function WeChatSkin(p: SkinProps) {
                 发送
               </button>
             </form>
+          )}
+          {callState && (
+            <div className="wx-call-overlay" role="dialog" aria-label="王橹杰语音通话">
+              <div className="wx-call-top">{callState === "ringing" ? "微信语音通话邀请" : "微信语音通话中"}</div>
+              <Avatar name="王橹杰" />
+              <h2>王橹杰</h2>
+              <p>{callState === "ringing" ? "邀请你进行语音通话…" : "桂橹 · 正在通话"}</p>
+              {callState === "ringing" ? (
+                <div className="wx-call-actions">
+                  <button className="wx-call-decline" onClick={() => setCallState(null)}><Phone size={22} /><span>拒绝</span></button>
+                  <button className="wx-call-accept" onClick={() => setCallState("connected")}><Phone size={22} /><span>接听</span></button>
+                </div>
+              ) : (
+                <button className="wx-call-hangup" onClick={() => setCallState(null)}><Phone size={22} />结束通话</button>
+              )}
+            </div>
           )}
         </>
       ) : moments ? (

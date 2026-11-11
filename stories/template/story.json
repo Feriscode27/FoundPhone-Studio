@@ -3,7 +3,7 @@
   "id": "zhang-guiyuan-iphone",
   "title": "张桂源的 iPhone",
   "description": "一部以张桂源日常为灵感的粉丝向互动手机。手机内聊天、备忘录与生活片段均为虚构同人创作，不代表真实私人记录。",
-  "revision": 5,
+  "revision": 6,
   "phone": {
     "owner": "张桂源",
     "date": "2026-11-12",
@@ -320,6 +320,142 @@
           "body": "熟人之间客气什么。",
           "senderId": "wang-lujie",
           "time": "昨天 19:04",
+          "kind": "text"
+        },
+        {
+          "id": "wl-014",
+          "title": "",
+          "body": "你是不是拿了我的黑色发圈？",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:26",
+          "kind": "text"
+        },
+        {
+          "id": "wl-015",
+          "title": "",
+          "body": "在储物柜里，忘了还你。",
+          "senderId": "owner",
+          "time": "昨天 19:27",
+          "kind": "text"
+        },
+        {
+          "id": "wl-016",
+          "title": "",
+          "body": "你怎么还记得放哪。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:27",
+          "kind": "text"
+        },
+        {
+          "id": "wl-017",
+          "title": "",
+          "body": "因为你上次找了半天。",
+          "senderId": "owner",
+          "time": "昨天 19:28",
+          "kind": "text"
+        },
+        {
+          "id": "wl-018",
+          "title": "",
+          "body": "那下次见面带给我。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:28",
+          "kind": "text"
+        },
+        {
+          "id": "wl-019",
+          "title": "",
+          "body": "行，别又忘了。",
+          "senderId": "owner",
+          "time": "昨天 19:29",
+          "kind": "text"
+        },
+        {
+          "id": "wl-020",
+          "title": "",
+          "body": "我哪有那么容易忘。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:29",
+          "kind": "text"
+        },
+        {
+          "id": "wl-021",
+          "title": "",
+          "body": "上次是谁把水杯落在球场？",
+          "senderId": "owner",
+          "time": "昨天 19:30",
+          "kind": "text"
+        },
+        {
+          "id": "wl-022",
+          "title": "",
+          "body": "……那是意外。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:30",
+          "kind": "text"
+        },
+        {
+          "id": "wl-023",
+          "title": "",
+          "body": "好，记下了。",
+          "senderId": "owner",
+          "time": "昨天 19:31",
+          "kind": "text"
+        },
+        {
+          "id": "wl-024",
+          "title": "",
+          "body": "你少记这些没用的。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:31",
+          "kind": "text"
+        },
+        {
+          "id": "wl-025",
+          "title": "",
+          "body": "有用。",
+          "senderId": "owner",
+          "time": "昨天 19:32",
+          "kind": "text"
+        },
+        {
+          "id": "wl-026",
+          "title": "",
+          "body": "那顺便记得明天提醒我带耳机。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:33",
+          "kind": "text"
+        },
+        {
+          "id": "wl-027",
+          "title": "",
+          "body": "知道了，明天提醒你。",
+          "senderId": "owner",
+          "time": "昨天 19:33",
+          "kind": "text"
+        },
+        {
+          "id": "wl-028",
+          "title": "",
+          "body": "还有，歌听完了没？",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:34",
+          "kind": "text"
+        },
+        {
+          "id": "wl-029",
+          "title": "",
+          "body": "听完了。留着当面讲。",
+          "senderId": "owner",
+          "time": "昨天 19:35",
+          "kind": "text"
+        },
+        {
+          "id": "wl-030",
+          "title": "",
+          "body": "行，那我等你说。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:35",
           "kind": "text"
         }
       ]

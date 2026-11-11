@@ -12,7 +12,7 @@ import {
   Smile,
   Users,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Item } from "../schema";
 import {
   Add,
@@ -110,6 +110,18 @@ function ChatRows({
 export function MessagesSkin(p: Props) {
   const { q, setQ, items } = useContent(p, "信息");
   const [unread, setUnread] = useState(false);
+  const [callState, setCallState] = useState<"ringing" | "connected" | null>(null);
+  const hasCallInvite =
+    p.thread === "王橹杰" &&
+    items.some((i) => i.title === p.thread && i.kind === "call");
+  useEffect(() => {
+    if (!hasCallInvite) {
+      setCallState(null);
+      return;
+    }
+    const timer = window.setTimeout(() => setCallState("ringing"), 900);
+    return () => window.clearTimeout(timer);
+  }, [hasCallInvite, p.thread]);
   return (
     <div className="catalog-skin native-messages">
       <Header
@@ -131,6 +143,31 @@ export function MessagesSkin(p: Props) {
             className="sms-bubbles"
           />
           <Composer p={p} />
+          {callState && (
+            <div className="sms-call-screen" role="dialog" aria-label="王橹杰来电">
+              <small>{callState === "ringing" ? "语音来电" : "正在通话"}</small>
+              <Avatar name="王橹杰" round />
+              <h2>王橹杰</h2>
+              <p>{callState === "ringing" ? "邀请你进行语音通话" : "桂橹 · 语音通话中"}</p>
+              {callState === "ringing" ? (
+                <div className="sms-call-actions">
+                  <button className="decline" onClick={() => setCallState(null)}>
+                    <Phone size={22} />
+                    <span>拒绝</span>
+                  </button>
+                  <button className="accept" onClick={() => setCallState("connected")}>
+                    <Phone size={22} />
+                    <span>接听</span>
+                  </button>
+                </div>
+              ) : (
+                <button className="sms-call-end" onClick={() => setCallState(null)}>
+                  <Phone size={23} />
+                  <span>结束通话</span>
+                </button>
+              )}
+            </div>
+          )}
         </>
       ) : (
         <div className="catalog-scroll">

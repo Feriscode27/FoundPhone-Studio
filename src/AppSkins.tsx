@@ -1,6 +1,6 @@
 import { NativeComposer } from "./DeviceSystem";
 import { useSkinState } from "./skinState";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   ChevronLeft,
   Plus,

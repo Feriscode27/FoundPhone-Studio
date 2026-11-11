@@ -489,8 +489,15 @@ function PhoneRuntime({
                       read: true,
                     });
                     const lower = text.toLowerCase();
+                    const smsApp = app === "messages";
+                    const asksIfAwake = /睡了没|睡了吗|睡着了吗|还没睡/.test(text.trim());
+                    const asksForVoice = /听听你的声音|听你的声音|想听你说话/.test(text.trim());
                     const privateChat = thread === "王橹杰";
-                    const reply = privateChat
+                    const reply = privateChat && asksIfAwake
+                      ? "还没呢，怎么了？这么晚，你怎么还不睡？"
+                      : privateChat && asksForVoice
+                        ? "好。"
+                        : privateChat
                       ? /吃饭|饿|外卖|饭/.test(lower)
                         ? "吃啊。你想吃什么？别又说随便。"
                         : /球|篮球|训练/.test(lower)
@@ -529,11 +536,23 @@ function PhoneRuntime({
                       outgoing: false,
                       read: true,
                     });
+                    const callInvite = privateChat && asksForVoice
+                      ? makeItem({
+                          title: thread,
+                          body: "王橹杰发来语音通话邀请",
+                          sender: "王橹杰",
+                          time,
+                          outgoing: false,
+                          read: true,
+                          kind: "call",
+                          meta: { thread, status: "incoming" },
+                        })
+                      : null;
                     update({
                       ...current,
                       messages: {
                         ...current.messages,
-                        [app]: [...(current.messages[app] ?? []), outgoing, incoming],
+                        [app]: [...(current.messages[app] ?? []), outgoing, incoming, ...(callInvite ? [callInvite] : [])],
                       },
                     });
                   }}

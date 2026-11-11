@@ -162,7 +162,8 @@ export function WeChatSkin(p: SkinProps) {
     [utility, setUtility] = useState(""),
     [callMenu, setCallMenu] = useState(false),
     [callType, setCallType] = useState<"语音通话" | "视频通话">("语音通话"),
-    [callState, setCallState] = useState<"ringing" | "connected" | null>(null);
+    [callState, setCallState] = useState<"ringing" | "connected" | null>(null),
+    [dismissedCallId, setDismissedCallId] = useState("");
   const [readThreads, setReadThreads] = useSkinState<string[]>(
     p,
     "readThreads",
@@ -184,11 +185,13 @@ export function WeChatSkin(p: SkinProps) {
   const incomingCall = p.thread === "王橹杰" ? p.items.find(
     (i) => i.title === p.thread && i.kind === "call",
   ) : undefined;
-  useEffect(() => {
-    if (!incomingCall) return;
-    setCallType("语音通话");
-    setCallState("ringing");
-  }, [incomingCall?.id]);
+  // Incoming call items are persisted in the chat timeline. Derive the
+  // ringing screen directly from that item so it cannot be missed by an
+  // effect when the chat updates on slower mobile browsers.
+  const visibleIncomingCall =
+    incomingCall && incomingCall.id !== dismissedCallId;
+  const activeCallState =
+    callState ?? (visibleIncomingCall ? "ringing" : null);
   return (
     <div
       className="wechat-ui independent-skin"
@@ -352,19 +355,19 @@ export function WeChatSkin(p: SkinProps) {
               </button>
             </form>
           )}
-          {callState && (
-            <div className="wx-call-overlay" role="dialog" aria-label={`王橹杰${callType}`}>
-              <div className="wx-call-top">{callState === "ringing" ? `微信${callType}邀请` : `微信${callType}中`}</div>
+          {activeCallState && (
+            <div className="wx-call-overlay" role="dialog" aria-modal="true" aria-label={`王橹杰${callType}`}>
+              <div className="wx-call-top">{activeCallState === "ringing" ? `微信${callType}邀请` : `微信${callType}中`}</div>
               <Avatar name="王橹杰" />
               <h2>王橹杰</h2>
-              <p>{callState === "ringing" ? `邀请你进行${callType}…` : `桂橹 · ${callType}中`}</p>
-              {callState === "ringing" ? (
+              <p>{activeCallState === "ringing" ? `邀请你进行${callType}…` : `桂橹 · ${callType}中`}</p>
+              {activeCallState === "ringing" ? (
                 <div className="wx-call-actions">
-                  <button className="wx-call-decline" onClick={() => setCallState(null)}><Phone size={22} /><span>拒绝</span></button>
+                  <button className="wx-call-decline" onClick={() => { if (incomingCall) setDismissedCallId(incomingCall.id); setCallState(null); }}><Phone size={22} /><span>拒绝</span></button>
                   <button className="wx-call-accept" onClick={() => setCallState("connected")}><Phone size={22} /><span>接听</span></button>
                 </div>
               ) : (
-                <button className="wx-call-hangup" onClick={() => setCallState(null)}><Phone size={22} />结束通话</button>
+                <button className="wx-call-hangup" onClick={() => { if (incomingCall) setDismissedCallId(incomingCall.id); setCallState(null); }}><Phone size={22} />结束通话</button>
               )}
             </div>
           )}

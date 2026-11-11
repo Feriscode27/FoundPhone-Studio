@@ -535,7 +535,7 @@ function PhoneRuntime({
                       outgoing: false,
                       read: true,
                     });
-                    const callInvite = privateChat && (asksIfAwake || asksForVoice)
+                    const callInvite = privateChat && asksForVoice
                       ? makeItem({
                           title: thread,
                           body: "王橹杰发来语音通话邀请",

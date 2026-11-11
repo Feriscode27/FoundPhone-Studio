@@ -489,19 +489,38 @@ function PhoneRuntime({
                       read: true,
                     });
                     const lower = text.toLowerCase();
-                    const reply = /吃饭|饿|外卖|饭/.test(lower)
-                      ? "好啊，你想吃什么？我看看附近有什么。"
-                      : /球|篮球|训练/.test(lower)
-                        ? "刚结束，等我一下。你怎么突然问这个？"
-                        : /想你|喜欢/.test(lower)
-                          ? "……怎么突然说这个。"
+                    const privateChat = thread === "王橹杰";
+                    const reply = privateChat
+                      ? /吃饭|饿|外卖|饭/.test(lower)
+                        ? "吃啊。你想吃什么？别又说随便。"
+                        : /球|篮球|训练/.test(lower)
+                          ? "刚结束，在收东西。你今天怎么这么关心我？"
+                          : /想你|喜欢|想见/.test(lower)
+                            ? "……你先把话说清楚。突然这样我怎么接。"
+                            : /在吗|干嘛|忙|睡了吗/.test(lower)
+                              ? "在。刚刚没看手机，怎么了？"
+                              : /奶茶|喝|饮料|少冰/.test(lower)
+                                ? "少冰，记得啊。上次那杯就不错。"
+                                : /哈哈|笑|ㅋㅋ/.test(lower)
+                                  ? "笑什么，发出来让我看看。"
+                                  : /照片|拍照|相册/.test(lower)
+                                    ? "你发我看看。拍得不好也不许删。"
+                                    : /歌|音乐|听/.test(lower)
+                                      ? "听完了？那说说你觉得哪一句最好听。"
+                                      : /回去|到了|到家/.test(lower)
+                                        ? "嗯，到了跟我说一声。"
+                                        : /谢谢|谢了/.test(lower)
+                                          ? "跟我还说这个？"
+                                          : "嗯，我看到了。你继续说，我在听。"
+                      : /吃饭|饿|外卖|饭/.test(lower)
+                        ? "好啊，你想吃什么？我看看附近有什么。"
+                        : /球|篮球|训练/.test(lower)
+                          ? "刚结束，等我一下。你怎么突然问这个？"
                           : /在吗|干嘛|忙/.test(lower)
                             ? "在呢，刚刚没看手机。"
-                            : /奶茶|喝|饮料/.test(lower)
-                              ? "可以，记得帮我少冰。"
-                              : /哈哈|笑/.test(lower)
-                                ? "你笑什么啊ㅋㅋ"
-                                : "嗯嗯，我看到啦。等下跟你说。";
+                            : /哈哈|笑/.test(lower)
+                              ? "你笑什么啊ㅋㅋ"
+                              : "收到，等下回你。";
                     const incoming = makeItem({
                       title: thread,
                       body: reply,
@@ -1046,6 +1065,7 @@ function AppContent({
               onBack={onBack}
               thread={thread}
               onThread={setThread}
+              onSend={onSend}
             />
           </Suspense>
         </div>

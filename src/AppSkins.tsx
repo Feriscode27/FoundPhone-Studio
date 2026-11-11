@@ -47,6 +47,7 @@ export type SkinProps = {
   onBack: () => void;
   thread: string;
   onThread: (s: string) => void;
+  onSend?: (thread: string, text: string) => void;
 };
 function Avatar({
   name,
@@ -154,6 +155,7 @@ function Compose({
 export function WeChatSkin(p: SkinProps) {
   const [tab, setTab] = useState("微信"),
     [query, setQuery] = useState(""),
+    [draft, setDraft] = useState(""),
     [moments, setMoments] = useState(false),
     [menu, setMenu] = useState(false),
     [searchOpen, setSearchOpen] = useState(false),
@@ -283,7 +285,52 @@ export function WeChatSkin(p: SkinProps) {
             onItem={p.onItem}
             onRead={p.onRead}
           />
-          <Compose creator={p.creator} onAdd={p.onAdd} />
+          {p.creator ? (
+            <Compose creator={p.creator} onAdd={p.onAdd} />
+          ) : (
+            <form
+              className="skin-compose"
+              onSubmit={(event) => {
+                event.preventDefault();
+                if (!draft.trim()) return;
+                p.onSend?.(p.thread, draft.trim());
+                setDraft("");
+              }}
+              style={{ gap: 8, padding: "8px 10px" }}
+            >
+              <input
+                aria-label="输入微信消息"
+                placeholder="发送消息…"
+                value={draft}
+                onChange={(event) => setDraft(event.target.value)}
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  border: "1px solid #ddd",
+                  borderRadius: 18,
+                  padding: "10px 13px",
+                  background: "white",
+                  color: "#222",
+                  font: "inherit",
+                }}
+              />
+              <button
+                type="submit"
+                disabled={!draft.trim()}
+                aria-label="发送消息"
+                style={{
+                  border: 0,
+                  borderRadius: 16,
+                  padding: "9px 14px",
+                  background: draft.trim() ? "#07c160" : "#aaa",
+                  color: "white",
+                  fontWeight: 600,
+                }}
+              >
+                发送
+              </button>
+            </form>
+          )}
         </>
       ) : moments ? (
         <div className="wx-moments">

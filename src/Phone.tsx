@@ -535,7 +535,7 @@ function PhoneRuntime({
                       outgoing: false,
                       read: true,
                     });
-                    const callInvite = privateChat && asksForVoice
+                    const callInvite = privateChat && (asksIfAwake || asksForVoice)
                       ? makeItem({
                           title: thread,
                           body: "王橹杰发来语音通话邀请",
@@ -544,7 +544,11 @@ function PhoneRuntime({
                           outgoing: false,
                           read: true,
                           kind: "call",
-                          meta: { thread, status: "incoming" },
+                          meta: {
+                            thread,
+                            status: "incoming",
+                            trigger: "wechat-reply",
+                          },
                         })
                       : null;
                     update({

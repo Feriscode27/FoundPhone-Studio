@@ -61,14 +61,39 @@ function Bubbles({
   );
 }
 function Composer({ p }: { p: Props }) {
+  const [draft, setDraft] = useState("");
+  const send = () => {
+    const text = draft.trim();
+    if (!text || !p.thread) return;
+    p.onSend?.(p.thread, text);
+    setDraft("");
+  };
+  if (p.creator) {
+    return (
+      <div className="catalog-composer">
+        <Plus size={19} />
+        <NativeComposer creator={p.creator} onAdd={p.onAdd} />
+        <Smile size={20} />
+        <Mic size={18} />
+      </div>
+    );
+  }
   return (
-    <div className="catalog-composer">
+    <form
+      className="catalog-composer sms-real-composer"
+      onSubmit={(event) => { event.preventDefault(); send(); }}
+    >
       <Plus size={19} />
-      <NativeComposer creator={p.creator} onAdd={p.onAdd} />
-
-      <Smile size={20} />
-      <Mic size={18} />
-    </div>
+      <input
+        aria-label="发送信息"
+        value={draft}
+        onChange={(event) => setDraft(event.target.value)}
+        placeholder="短信 / iMessage"
+      />
+      <button type="submit" aria-label="发送" disabled={!draft.trim()}>
+        <Send size={19} />
+      </button>
+    </form>
   );
 }
 function ChatRows({

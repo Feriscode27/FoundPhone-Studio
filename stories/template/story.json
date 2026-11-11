@@ -1,12 +1,12 @@
 {
   "scriptVersion": 1,
-  "id": "ui-test-phone-v2",
-  "title": "捡手机",
-  "description": "仅用于界面测试，不含剧情",
-  "revision": 2,
+  "id": "zhang-guiyuan-iphone",
+  "title": "张桂源的 iPhone",
+  "description": "一部以张桂源日常为灵感的粉丝向互动手机。手机内聊天、备忘录与生活片段均为虚构同人创作，不代表真实私人记录。",
+  "revision": 3,
   "phone": {
-    "owner": "机主",
-    "date": "2026-10-25",
+    "owner": "张桂源",
+    "date": "2026-11-12",
     "time": "09:41",
     "battery": 94,
     "network": "5G",
@@ -89,159 +89,232 @@
   ],
   "contacts": [
     {
-      "id": "test-contact",
-      "name": "测试联系人",
+      "id": "wang-lujie",
+      "name": "王橹杰",
       "phone": "",
-      "bio": "这是一条测试内容。"
+      "avatar": "",
+      "bio": "熟悉的人面前有点大小姐气场，嘴上不一定让步，行动上却很自然。"
+    },
+    {
+      "id": "yu-yuhan",
+      "name": "余宇涵",
+      "phone": "",
+      "avatar": "",
+      "bio": "朋友。"
+    },
+    {
+      "id": "yang-bowen",
+      "name": "杨博文",
+      "phone": "",
+      "avatar": "",
+      "bio": "朋友。"
+    },
+    {
+      "id": "chen-junming",
+      "name": "陈俊明",
+      "phone": "",
+      "avatar": "",
+      "bio": "朋友。"
+    },
+    {
+      "id": "chen-junming2",
+      "name": "陈浚铭",
+      "phone": "",
+      "avatar": "",
+      "bio": "朋友。"
     }
   ],
   "chats": [
     {
-      "id": "test-chat-messages",
-      "app": "messages",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-messages",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-wechat",
+      "id": "chat-wang-lujie",
       "app": "wechat",
-      "title": "测试会话",
+      "title": "王橹杰",
       "participants": [
         "owner",
-        "test-contact"
+        "wang-lujie"
       ],
       "messages": [
         {
-          "id": "test-message-wechat",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-qq",
-      "app": "qq",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-qq",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-whatsapp",
-      "app": "whatsapp",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-whatsapp",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-telegram",
-      "app": "telegram",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-telegram",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-discord",
-      "app": "discord",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-discord",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-line",
-      "app": "line",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-line",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-messenger",
-      "app": "messenger",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-messenger",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
-      "id": "test-chat-kakao",
-      "app": "kakao",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-kakao",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
+          "id": "wl-001",
+          "title": "",
+          "body": "你到哪了？",
+          "senderId": "wang-lujie",
+          "time": "昨天 18:42",
+          "kind": "text"
         },
         {
-          "id": "test-reply-kakao",
-          "body": "这是一条测试回复。",
-          "senderId": "owner"
+          "id": "wl-002",
+          "title": "",
+          "body": "楼下，刚打完球。",
+          "senderId": "owner",
+          "time": "昨天 18:43",
+          "kind": "text"
+        },
+        {
+          "id": "wl-003",
+          "title": "",
+          "body": "那你顺便帮我带杯喝的。",
+          "senderId": "wang-lujie",
+          "time": "昨天 18:43",
+          "kind": "text"
+        },
+        {
+          "id": "wl-004",
+          "title": "",
+          "body": "你倒是挺会安排。",
+          "senderId": "owner",
+          "time": "昨天 18:44",
+          "kind": "text"
+        },
+        {
+          "id": "wl-005",
+          "title": "",
+          "body": "怎么，不愿意？",
+          "senderId": "wang-lujie",
+          "time": "昨天 18:44",
+          "kind": "text"
+        },
+        {
+          "id": "wl-006",
+          "title": "",
+          "body": "没说不愿意。喝什么？",
+          "senderId": "owner",
+          "time": "昨天 18:45",
+          "kind": "text"
+        },
+        {
+          "id": "wl-007",
+          "title": "",
+          "body": "你知道的。少冰。",
+          "senderId": "wang-lujie",
+          "time": "昨天 18:45",
+          "kind": "text"
+        },
+        {
+          "id": "wl-008",
+          "title": "",
+          "body": "知道了，大小姐。",
+          "senderId": "owner",
+          "time": "昨天 18:46",
+          "kind": "text"
+        },
+        {
+          "id": "wl-009",
+          "title": "",
+          "body": "[动画表情]",
+          "senderId": "wang-lujie",
+          "time": "昨天 18:46",
+          "kind": "text"
+        },
+        {
+          "id": "wl-010",
+          "title": "",
+          "body": "到了，下来拿。",
+          "senderId": "owner",
+          "time": "昨天 19:02",
+          "kind": "text"
+        },
+        {
+          "id": "wl-011",
+          "title": "",
+          "body": "你上来。东西有点多。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:03",
+          "kind": "text"
+        },
+        {
+          "id": "wl-012",
+          "title": "",
+          "body": "……你是真不客气。",
+          "senderId": "owner",
+          "time": "昨天 19:03",
+          "kind": "text"
+        },
+        {
+          "id": "wl-013",
+          "title": "",
+          "body": "熟人之间客气什么。",
+          "senderId": "wang-lujie",
+          "time": "昨天 19:04",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "chat-friends",
+      "app": "wechat",
+      "title": "今天也要打球",
+      "participants": [
+        "owner",
+        "yu-yuhan",
+        "yang-bowen"
+      ],
+      "messages": [
+        {
+          "id": "friends-001",
+          "title": "",
+          "body": "晚上有空没？",
+          "senderId": "yu-yuhan",
+          "time": "08:52",
+          "kind": "text"
+        },
+        {
+          "id": "friends-002",
+          "title": "",
+          "body": "看情况，怎么了？",
+          "senderId": "owner",
+          "time": "08:53",
+          "kind": "text"
+        },
+        {
+          "id": "friends-003",
+          "title": "",
+          "body": "约球啊，差你一个。",
+          "senderId": "yu-yuhan",
+          "time": "08:53",
+          "kind": "text"
+        },
+        {
+          "id": "friends-004",
+          "title": "",
+          "body": "我问问。",
+          "senderId": "owner",
+          "time": "08:54",
+          "kind": "text"
+        },
+        {
+          "id": "friends-005",
+          "title": "",
+          "body": "别问了，来就行。",
+          "senderId": "yang-bowen",
+          "time": "08:55",
+          "kind": "text"
+        },
+        {
+          "id": "friends-006",
+          "title": "",
+          "body": "你俩先把场地订了。",
+          "senderId": "owner",
+          "time": "08:56",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "chat-family",
+      "app": "wechat",
+      "title": "家里",
+      "participants": [
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "family-001",
+          "title": "",
+          "body": "今天记得早点休息，别总熬夜。",
+          "senderId": "owner",
+          "time": "07:40",
+          "kind": "text"
         }
       ]
     }
@@ -249,447 +322,139 @@
   "content": {
     "phone": [
       {
-        "id": "test-item-phone",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "contacts": [
-      {
-        "id": "test-item-contacts",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "phone-call-log",
+        "title": "最近通话",
+        "body": "王橹杰｜未接来电\n王橹杰｜通话 02:16\n余宇涵｜通话 00:48",
+        "time": "昨天"
       }
     ],
     "photos": [
       {
-        "id": "test-item-photos",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "camera": [
+        "id": "photo-basketball",
+        "title": "球场边",
+        "body": "傍晚的球场，篮筐、球鞋，还有没来得及收起来的外套。",
+        "time": "昨天 18:17",
+        "kind": "image",
+        "meta": {
+          "album": "最近项目",
+          "caption": "打完再走。"
+        }
+      },
       {
-        "id": "test-item-camera",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "safari": [
+        "id": "photo-drink",
+        "title": "两杯饮料",
+        "body": "一杯少冰，一杯正常冰。拍完照才想起来吸管还没插。",
+        "time": "昨天 19:08",
+        "kind": "image",
+        "meta": {
+          "album": "最近项目",
+          "caption": "顺手拍的。"
+        }
+      },
       {
-        "id": "test-item-safari",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "photo-cat",
+        "title": "猫猫日常",
+        "body": "猫趴在沙发边，尾巴刚好挡住了镜头。",
+        "time": "11月10日",
+        "kind": "image",
+        "meta": {
+          "album": "生活"
+        }
+      },
+      {
+        "id": "photo-blur",
+        "title": "没对上焦的一张",
+        "body": "画面有点糊，但能看出来旁边有人在笑。",
+        "time": "11月09日",
+        "kind": "image",
+        "meta": {
+          "album": "最近项目",
+          "caption": "废片也先留着。"
+        }
       }
     ],
     "notes": [
       {
-        "id": "test-item-notes",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "calendar": [
+        "id": "note-todo",
+        "title": "今天要做的事",
+        "body": "□ 训练\n□ 回几条消息\n□ 把衣服收了\n□ 记得给王橹杰带少冰\n\n最后一条被单独圈出来了。",
+        "time": "今天 09:12"
+      },
       {
-        "id": "test-item-calendar",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "mail": [
+        "id": "note-basketball",
+        "title": "球场备忘",
+        "body": "下次记得带：\n- 护腕\n- 水\n- 备用球衣\n\n还有：别和余宇涵说只打一小时。",
+        "time": "11月10日"
+      },
       {
-        "id": "test-item-mail",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "note-unsent",
+        "title": "没发出去的话",
+        "body": "有些话当面说也没什么。\n只是每次到了嘴边，又觉得没必要特意讲出来。\n\n算了，先存着。",
+        "time": "11月08日",
+        "hidden": true,
+        "folder": "草稿"
       }
     ],
-    "clock": [
-      {
-        "id": "test-item-clock",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "reminders": [
-      {
-        "id": "test-item-reminders",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "files": [
-      {
-        "id": "test-item-files",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
+    "calendar": [],
     "music": [
       {
-        "id": "test-item-music",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "music-playlist",
+        "title": "最近循环",
+        "body": "训练路上听的歌单。\n有几首已经循环很多遍了。",
+        "time": "最近"
+      },
+      {
+        "id": "music-shared",
+        "title": "有人分享的歌",
+        "body": "王橹杰分享了一首歌。\n备注：听完告诉我。",
+        "time": "昨天"
       }
     ],
-    "maps": [
+    "contacts": [
       {
-        "id": "test-item-maps",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "weather": [
+        "id": "contact-wang",
+        "title": "王橹杰",
+        "body": "备注：熟人。少冰。偶尔很会使唤人。",
+        "time": ""
+      },
       {
-        "id": "test-item-weather",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "wallet": [
-      {
-        "id": "test-item-wallet",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "health": [
-      {
-        "id": "test-item-health",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "find": [
-      {
-        "id": "test-item-find",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "calculator": [
-      {
-        "id": "test-item-calculator",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "settings": [
-      {
-        "id": "test-item-settings",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "weibo": [
-      {
-        "id": "test-item-weibo",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "redbook": [
-      {
-        "id": "test-item-redbook",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "contact-yu",
+        "title": "余宇涵",
+        "body": "备注：球友。约球消息出现频率很高。",
+        "time": ""
       }
     ],
     "douyin": [
       {
-        "id": "test-item-douyin",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "douyin-draft",
+        "title": "未发布草稿",
+        "body": "一段训练后随手录的视频。\n还没想好配什么音乐。",
+        "time": "昨天",
+        "folder": "草稿"
       }
     ],
-    "bilibili": [
+    "safari": [
       {
-        "id": "test-item-bilibili",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "safari-search",
+        "title": "最近搜索",
+        "body": "篮球训练计划\n附近球场\n少冰饮品推荐",
+        "time": "最近"
       }
     ],
-    "alipay": [
+    "reminders": [
       {
-        "id": "test-item-alipay",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "taobao": [
-      {
-        "id": "test-item-taobao",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "netease": [
-      {
-        "id": "test-item-netease",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "delivery": [
-      {
-        "id": "test-item-delivery",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "forum": [
-      {
-        "id": "test-item-forum",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "instagram": [
-      {
-        "id": "test-item-instagram",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "tiktok": [
-      {
-        "id": "test-item-tiktok",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "twitter": [
-      {
-        "id": "test-item-twitter",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "youtube": [
-      {
-        "id": "test-item-youtube",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "snapchat": [
-      {
-        "id": "test-item-snapchat",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "facebook": [
-      {
-        "id": "test-item-facebook",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "reddit": [
-      {
-        "id": "test-item-reddit",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "spotify": [
-      {
-        "id": "test-item-spotify",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "netflix": [
-      {
-        "id": "test-item-netflix",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "pinterest": [
-      {
-        "id": "test-item-pinterest",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      }
-    ],
-    "threads": [
-      {
-        "id": "test-item-threads",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
-      },
-      {
-        "id": "test-threads-message-1",
-        "title": "测试会话1",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人1",
-        "folder": "私信"
-      },
-      {
-        "id": "test-threads-activity-1",
-        "title": "测试动态1",
-        "body": "这是一条测试回复动态。",
-        "sender": "测试用户1",
-        "meta": {
-          "activityType": "reply"
-        }
-      },
-      {
-        "id": "test-threads-message-2",
-        "title": "测试会话2",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人2",
-        "folder": "私信"
-      },
-      {
-        "id": "test-threads-activity-2",
-        "title": "测试动态2",
-        "body": "这是一条测试回复动态。",
-        "sender": "测试用户2",
-        "meta": {
-          "activityType": "reply"
-        }
-      },
-      {
-        "id": "test-threads-message-3",
-        "title": "测试会话3",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人3",
-        "folder": "私信"
-      },
-      {
-        "id": "test-threads-activity-3",
-        "title": "测试动态3",
-        "body": "这是一条测试回复动态。",
-        "sender": "测试用户3",
-        "meta": {
-          "activityType": "reply"
-        }
+        "id": "reminder-drink",
+        "title": "带一杯少冰",
+        "body": "别忘了。有人会记得你忘没忘。",
+        "time": "今天"
       }
     ],
     "appstore": [
       {
-        "id": "test-appstore",
-        "title": "测试内容",
-        "body": "这是一条测试内容。"
+        "id": "appstore-welcome",
+        "title": "欢迎使用",
+        "body": "这是一部被故事填满的手机。试着打开微信、相册和备忘录，看看日常里藏着什么。",
+        "time": ""
       }
     ]
   },

@@ -181,9 +181,9 @@ export function WeChatSkin(p: SkinProps) {
   const posts = p.items.filter(
     (i) => i.folder === "朋友圈" || i.kind === "post",
   );
-  const incomingCall = p.thread === "王橹杰" && p.items.find(
+  const incomingCall = p.thread === "王橹杰" ? p.items.find(
     (i) => i.title === p.thread && i.kind === "call",
-  );
+  ) : undefined;
   useEffect(() => {
     if (!incomingCall) return;
     setCallType("语音通话");

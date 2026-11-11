@@ -161,6 +161,7 @@ export function WeChatSkin(p: SkinProps) {
     [searchOpen, setSearchOpen] = useState(false),
     [utility, setUtility] = useState(""),
     [callMenu, setCallMenu] = useState(false),
+    [callType, setCallType] = useState<"语音通话" | "视频通话">("语音通话"),
     [callState, setCallState] = useState<"ringing" | "connected" | null>(null);
   const [readThreads, setReadThreads] = useSkinState<string[]>(
     p,
@@ -185,6 +186,7 @@ export function WeChatSkin(p: SkinProps) {
   );
   useEffect(() => {
     if (!incomingCall) return;
+    setCallType("语音通话");
     setCallState("ringing");
   }, [incomingCall?.id]);
   return (
@@ -312,8 +314,8 @@ export function WeChatSkin(p: SkinProps) {
                 </button>
                 {callMenu && (
                   <div className="wx-call-menu">
-                    <button type="button" onClick={() => { setCallMenu(false); setCallState("connected"); }}>语音通话</button>
-                    <button type="button" onClick={() => { setCallMenu(false); setCallState("connected"); }}>视频通话</button>
+                    <button type="button" onClick={() => { setCallMenu(false); setCallType("语音通话"); setCallState("connected"); }}>语音通话</button>
+                    <button type="button" onClick={() => { setCallMenu(false); setCallType("视频通话"); setCallState("connected"); }}>视频通话</button>
                   </div>
                 )}
               </div>
@@ -351,11 +353,11 @@ export function WeChatSkin(p: SkinProps) {
             </form>
           )}
           {callState && (
-            <div className="wx-call-overlay" role="dialog" aria-label="王橹杰语音通话">
-              <div className="wx-call-top">{callState === "ringing" ? "微信语音通话邀请" : "微信语音通话中"}</div>
+            <div className="wx-call-overlay" role="dialog" aria-label={`王橹杰${callType}`}>
+              <div className="wx-call-top">{callState === "ringing" ? `微信${callType}邀请` : `微信${callType}中`}</div>
               <Avatar name="王橹杰" />
               <h2>王橹杰</h2>
-              <p>{callState === "ringing" ? "邀请你进行语音通话…" : "桂橹 · 正在通话"}</p>
+              <p>{callState === "ringing" ? `邀请你进行${callType}…` : `桂橹 · ${callType}中`}</p>
               {callState === "ringing" ? (
                 <div className="wx-call-actions">
                   <button className="wx-call-decline" onClick={() => setCallState(null)}><Phone size={22} /><span>拒绝</span></button>

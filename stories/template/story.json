@@ -3,7 +3,7 @@
   "id": "zhang-guiyuan-iphone",
   "title": "张桂源的 iPhone",
   "description": "一部以张桂源日常为灵感的粉丝向互动手机。手机内聊天、备忘录与生活片段均为虚构同人创作，不代表真实私人记录。",
-  "revision": 7,
+  "revision": 8,
   "phone": {
     "owner": "张桂源",
     "date": "2026-11-12",
@@ -1229,17 +1229,56 @@
     ],
     "messages": [
       {
-        "id": "sms-thread-wang-lujie",
+        "id": "sms-wlj-001",
         "title": "王橹杰",
-        "body": "张桂源  23:56\n睡了没？\n\n王橹杰  23:56\n还没呢，怎么了？这么晚，你怎么还不睡？\n\n张桂源  23:57\n可以让我听听你的声音吗？\n\n王橹杰  23:58\n（发起语音通话）",
+        "body": "睡了没？",
+        "sender": "张桂源",
+        "time": "今天 23:56",
+        "folder": "信息",
+        "kind": "text",
+        "outgoing": true,
+        "meta": {
+          "thread": "王橹杰"
+        }
+      },
+      {
+        "id": "sms-wlj-002",
+        "title": "王橹杰",
+        "body": "还没呢，怎么了？这么晚，你怎么还不睡？",
         "sender": "王橹杰",
         "time": "今天 23:56",
         "folder": "信息",
-        "kind": "message",
+        "kind": "text",
+        "outgoing": false,
+        "meta": {
+          "thread": "王橹杰"
+        }
+      },
+      {
+        "id": "sms-wlj-003",
+        "title": "王橹杰",
+        "body": "可以让我听听你的声音吗？",
+        "sender": "张桂源",
+        "time": "今天 23:57",
+        "folder": "信息",
+        "kind": "text",
+        "outgoing": true,
+        "meta": {
+          "thread": "王橹杰"
+        }
+      },
+      {
+        "id": "sms-wlj-004",
+        "title": "王橹杰",
+        "body": "王橹杰发来语音通话邀请",
+        "sender": "王橹杰",
+        "time": "今天 23:58",
+        "folder": "信息",
+        "kind": "call",
+        "outgoing": false,
         "meta": {
           "thread": "王橹杰",
-          "unread": false,
-          "fictional": true
+          "status": "incoming"
         }
       }
     ]

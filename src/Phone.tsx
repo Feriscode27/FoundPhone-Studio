@@ -489,7 +489,6 @@ function PhoneRuntime({
                       read: true,
                     });
                     const lower = text.toLowerCase();
-                    const smsApp = app === "messages";
                     const asksIfAwake = /睡了没|睡了吗|睡着了吗|还没睡/.test(text.trim());
                     const asksForVoice = /听听你的声音|听你的声音|想听你说话/.test(text.trim());
                     const privateChat = thread === "王橹杰";

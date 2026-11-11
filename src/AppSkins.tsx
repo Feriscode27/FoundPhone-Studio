@@ -47,7 +47,7 @@ export type SkinProps = {
   onBack: () => void;
   thread: string;
   onThread: (s: string) => void;
-  onSend: (thread: string, text: string) => void;
+  onSend?: (thread: string, text: string) => void;
 };
 function Avatar({
   name,
@@ -293,7 +293,7 @@ export function WeChatSkin(p: SkinProps) {
               onSubmit={(event) => {
                 event.preventDefault();
                 if (!draft.trim()) return;
-                p.onSend(p.thread, draft.trim());
+                p.onSend?.(p.thread, draft.trim());
                 setDraft("");
               }}
               style={{ gap: 8, padding: "8px 10px" }}

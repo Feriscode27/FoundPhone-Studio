@@ -299,24 +299,6 @@
           "kind": "text"
         }
       ]
-    },
-    {
-      "id": "chat-family",
-      "app": "wechat",
-      "title": "家里",
-      "participants": [
-        "owner"
-      ],
-      "messages": [
-        {
-          "id": "family-001",
-          "title": "",
-          "body": "今天记得早点休息，别总熬夜。",
-          "senderId": "owner",
-          "time": "07:40",
-          "kind": "text"
-        }
-      ]
     }
   ],
   "content": {
@@ -334,7 +316,6 @@
         "title": "球场边",
         "body": "傍晚的球场，篮筐、球鞋，还有没来得及收起来的外套。",
         "time": "昨天 18:17",
-        "kind": "image",
         "meta": {
           "album": "最近项目",
           "caption": "打完再走。"
@@ -345,7 +326,6 @@
         "title": "两杯饮料",
         "body": "一杯少冰，一杯正常冰。拍完照才想起来吸管还没插。",
         "time": "昨天 19:08",
-        "kind": "image",
         "meta": {
           "album": "最近项目",
           "caption": "顺手拍的。"
@@ -356,7 +336,6 @@
         "title": "猫猫日常",
         "body": "猫趴在沙发边，尾巴刚好挡住了镜头。",
         "time": "11月10日",
-        "kind": "image",
         "meta": {
           "album": "生活"
         }
@@ -366,7 +345,6 @@
         "title": "没对上焦的一张",
         "body": "画面有点糊，但能看出来旁边有人在笑。",
         "time": "11月09日",
-        "kind": "image",
         "meta": {
           "album": "最近项目",
           "caption": "废片也先留着。"
@@ -391,7 +369,6 @@
         "title": "没发出去的话",
         "body": "有些话当面说也没什么。\n只是每次到了嘴边，又觉得没必要特意讲出来。\n\n算了，先存着。",
         "time": "11月08日",
-        "hidden": true,
         "folder": "草稿"
       }
     ],

@@ -544,7 +544,11 @@ function PhoneRuntime({
                           outgoing: false,
                           read: true,
                           kind: "call",
-                          meta: { thread, status: "incoming" },
+                          meta: {
+                            thread,
+                            status: "incoming",
+                            trigger: "wechat-reply",
+                          },
                         })
                       : null;
                     update({

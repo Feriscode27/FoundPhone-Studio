@@ -3,7 +3,7 @@
   "id": "zhang-guiyuan-iphone",
   "title": "张桂源的 iPhone",
   "description": "一部以张桂源日常为灵感的粉丝向互动手机。手机内聊天、备忘录与生活片段均为虚构同人创作，不代表真实私人记录。",
-  "revision": 6,
+  "revision": 7,
   "phone": {
     "owner": "张桂源",
     "date": "2026-11-12",
@@ -805,10 +805,25 @@
   "content": {
     "phone": [
       {
+        "id": "phone-contact-wang-lujie",
+        "title": "王橹杰",
+        "body": "王橹杰\n联系人已保存\n备注：熟人。少冰。偶尔很会使唤人。",
+        "time": "最近"
+      },
+      {
+        "id": "phone-call-wang-lujie-night",
+        "title": "王橹杰",
+        "body": "呼入 · 已接听\n通话时长 06:18\n23:58",
+        "time": "今天 23:58",
+        "sender": "王橹杰",
+        "kind": "call",
+        "folder": "通话"
+      },
+      {
         "id": "phone-call-log",
         "title": "最近通话",
-        "body": "王橹杰｜未接来电\n王橹杰｜通话 02:16\n余宇涵｜通话 00:48",
-        "time": "昨天"
+        "body": "王橹杰｜呼入 · 已接听 06:18\n王橹杰｜未接来电\n王橹杰｜通话 02:16\n余宇涵｜通话 00:48",
+        "time": "今天"
       }
     ],
     "photos": [
@@ -1210,6 +1225,22 @@
           "杨涵博：不是我。",
           "张奕然：我有证据。"
         ]
+      }
+    ],
+    "messages": [
+      {
+        "id": "sms-thread-wang-lujie",
+        "title": "王橹杰",
+        "body": "张桂源  23:56\n睡了没？\n\n王橹杰  23:56\n还没呢，怎么了？这么晚，你怎么还不睡？\n\n张桂源  23:57\n可以让我听听你的声音吗？\n\n王橹杰  23:58\n（发起语音通话）",
+        "sender": "王橹杰",
+        "time": "今天 23:56",
+        "folder": "信息",
+        "kind": "message",
+        "meta": {
+          "thread": "王橹杰",
+          "unread": false,
+          "fictional": true
+        }
       }
     ]
   },

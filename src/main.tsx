@@ -62,6 +62,18 @@ function Studio() {
   const [side, setSide] = useState(true);
   const [phoneKey, setPhoneKey] = useState(0);
   const input = useRef<HTMLInputElement>(null);
+  const autoPreviewStarted = useRef(false);
+  useEffect(() => {
+    if (
+      !work ||
+      autoPreviewStarted.current ||
+      new URLSearchParams(window.location.search).get("play") !== "1"
+    ) return;
+    autoPreviewStarted.current = true;
+    const snapshot = structuredClone(work);
+    setPreview(snapshot);
+    setRuntime(dispatch(snapshot, initialRuntime(snapshot), "start"));
+  }, [work]);
   useEffect(() => {
     void useStudio.getState().load();
     const handler = () => {

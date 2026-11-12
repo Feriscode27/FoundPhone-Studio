@@ -3,11 +3,12 @@
   "id": "zhang-guiyuan-iphone",
   "title": "张桂源的 iPhone",
   "description": "一部以张桂源日常为灵感的粉丝向互动手机。手机内聊天、备忘录与生活片段均为虚构同人创作，不代表真实私人记录。",
-  "revision": 9,
+  "revision": 10,
   "phone": {
     "owner": "张桂源",
     "date": "2026-11-12",
     "time": "09:41",
+    "passcode": "0108",
     "battery": 94,
     "network": "5G",
     "wallpaper": "apple-wwdc26"
